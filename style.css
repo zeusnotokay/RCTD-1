@@ -2616,11 +2616,16 @@ body.custom-cursor-active * {
 
 .phoenix-emblem-wrapper {
   position: relative;
-  width: 190px;
-  height: 190px;
+  width: 220px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: white;
+  border-radius: 50%;
+  padding: 8px;
+  box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
+  animation: phoenixRise 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, phoenixPulse 3s ease-in-out infinite 1.4s;
 }
 
 .phoenix-emblem-img {
@@ -2628,8 +2633,6 @@ body.custom-cursor-active * {
   height: 100%;
   object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
-  animation: phoenixRise 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, phoenixPulse 3s ease-in-out infinite 1.4s;
 }
 
 .phoenix-ring-glow {
@@ -2639,8 +2642,8 @@ body.custom-cursor-active * {
   right: -12px;
   bottom: -12px;
   border-radius: 50%;
-  border: 2px dashed rgba(245, 158, 11, 0.6);
-  animation: ringRotate 12s linear infinite;
+  border: 2.5px dashed rgba(245, 158, 11, 0.7);
+  animation: ringRotate 14s linear infinite;
   pointer-events: none;
 }
 
@@ -2692,7 +2695,7 @@ body.custom-cursor-active * {
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 70px rgba(234, 88, 12, 0.8), 0 0 120px rgba(190, 24, 93, 0.7);
+    box-shadow: 0 0 75px rgba(234, 88, 12, 0.85), 0 0 120px rgba(190, 24, 93, 0.75);
   }
 }
 
@@ -2704,11 +2707,16 @@ body.custom-cursor-active * {
 /* Hero Phoenix Emblem Badge */
 .hero-phoenix-emblem {
   position: relative;
-  width: 140px;
-  height: 140px;
+  width: 170px;
+  height: 170px;
   margin: 0 auto 1.5rem auto;
   cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  padding: 6px;
+  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.35), 0 4px 15px rgba(107, 33, 168, 0.25);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: phoenixPulse 4s ease-in-out infinite;
 }
 
 .hero-phoenix-emblem:hover {
@@ -2720,8 +2728,6 @@ body.custom-cursor-active * {
   height: 100%;
   object-fit: contain;
   border-radius: 50%;
-  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.35), 0 4px 15px rgba(107, 33, 168, 0.25);
-  animation: phoenixPulse 4s ease-in-out infinite;
 }
 
 .hero-phoenix-emblem::after {
