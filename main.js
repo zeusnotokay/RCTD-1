@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initContactForm();
   initNetflixMode();
+  initEnchanteTeamInteractions();
 });
 
 // 1. Premium Slideshow for index.html
@@ -466,3 +467,127 @@ function initNetflixMode() {
     });
   }
 }
+
+// 8. Dynamic ENCHANTÉ Team Interactions (Avenue Filters, 3D Card Tilt & Particle Canvas)
+function initEnchanteTeamInteractions() {
+  // A. Board of Directors Avenue Filtering
+  const filterBtns = document.querySelectorAll('.bod-filter-btn');
+  const bodCards = document.querySelectorAll('.bod-card');
+
+  if (filterBtns.length > 0 && bodCards.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active class toggle
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.getAttribute('data-filter');
+
+        bodCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || category === filter) {
+            card.classList.remove('filtered-out');
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(15px)';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 50);
+          } else {
+            card.classList.add('filtered-out');
+          }
+        });
+      });
+    });
+  }
+
+  // B. Interactive 3D Card Tilt Sheen Effect
+  const teamCards = document.querySelectorAll('.enchante-theme-frame .team-card');
+  teamCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      card.style.transform = `perspective(1000px) rotateX(${-y / 15}deg) rotateY(${x / 15}deg) scale3d(1.02, 1.02, 1.02)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+    });
+  });
+
+  // C. ENCHANTÉ Phoenix Ember Canvas Particle Background
+  const canvas = document.getElementById('enchante-canvas');
+  if (canvas && canvas.parentElement) {
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = canvas.parentElement.offsetWidth);
+    let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+    window.addEventListener('resize', () => {
+      if (canvas.parentElement) {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+      }
+    });
+
+    const colors = ['#6b21a8', '#be185d', '#ea580c', '#f59e0b'];
+    const particles = Array.from({ length: 40 }, () => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      r: Math.random() * 2.5 + 1,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vy: Math.random() * 0.7 + 0.3,
+      vx: (Math.random() - 0.5) * 0.5,
+      alpha: Math.random() * 0.5 + 0.2
+    }));
+
+    function renderEmberParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.y -= p.vy;
+        p.x += p.vx;
+
+        if (p.y < 0) {
+          p.y = height;
+          p.x = Math.random() * width;
+        }
+        if (p.x < 0 || p.x > width) {
+          p.x = Math.random() * width;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = p.alpha;
+        ctx.fillStyle = p.color;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      });
+
+      requestAnimationFrame(renderEmberParticles);
+    }
+
+    renderEmberParticles();
+  }
+
+  // D. Phoenix Entrance Intro Overlay Auto Dismissal
+  const introOverlay = document.getElementById('phoenix-intro');
+  if (introOverlay) {
+    const dismissIntro = () => {
+      introOverlay.classList.add('fade-out');
+      setTimeout(() => {
+        if (introOverlay.parentNode) {
+          introOverlay.parentNode.removeChild(introOverlay);
+        }
+      }, 900);
+    };
+
+    // Auto fade-out after 1.8 seconds or immediately on click
+    setTimeout(dismissIntro, 1800);
+    introOverlay.addEventListener('click', dismissIntro);
+  }
+}
+
+

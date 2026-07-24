@@ -27,236 +27,305 @@
 
 <body>
 
+  <!-- ENCHANTÉ Phoenix Entrance Intro Overlay -->
+  <div id="phoenix-intro" class="phoenix-intro-overlay">
+    <div class="phoenix-intro-content">
+      <div class="phoenix-emblem-wrapper">
+        <img class="phoenix-emblem-img" src="images/enchante-phoenix.png" alt="ENCHANTÉ Phoenix Emblem">
+        <div class="phoenix-ring-glow"></div>
+      </div>
+      <h1 class="phoenix-intro-title">ENCHANTÉ</h1>
+      <p class="phoenix-intro-subtitle">Rotaract Club of Thane Downtown • 2026-27</p>
+    </div>
+  </div>
+
   <!-- Page Hero Banner -->
-  <section class="page-hero animate-fade">
-    <div class="container">
+  <section class="page-hero animate-fade" style="position: relative; overflow: hidden;">
+    <canvas id="enchante-canvas"></canvas>
+    <div class="container text-center" style="position: relative; z-index: 2;">
+      
+      <!-- Hero Animated Phoenix Emblem -->
+      <div class="hero-phoenix-emblem" title="ENCHANTÉ Theme Emblem 2026-27">
+        <img src="images/enchante-phoenix.png" alt="ENCHANTÉ Phoenix Emblem">
+      </div>
+
+      <div class="hero-enchante-badge">
+        <span>✨ Rotaract Year 2026-27</span> • <span class="theme-name">Club Theme: ENCHANTÉ</span>
+      </div>
       <h1 class="gradient-text">Our Team</h1>
-      <p>The core leadership and coordinators driving our vision forward for the year 2025-26.</p>
+      <p>The core leadership and coordinators driving our vision forward for the year 2026-27.</p>
+
+      <!-- Dynamic Stats Counter Row -->
+      <div class="team-stats-grid stats-trigger">
+        <div class="team-stat-card">
+          <div class="team-stat-number counter-number" data-target="13">0</div>
+          <div class="team-stat-label">Core Officers</div>
+        </div>
+        <div class="team-stat-card">
+          <div class="team-stat-number counter-number" data-target="11">0</div>
+          <div class="team-stat-label">Board Avenues</div>
+        </div>
+        <div class="team-stat-card">
+          <div class="team-stat-number counter-number" data-target="12" data-suffix="+">0</div>
+          <div class="team-stat-label">Years of Impact</div>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Core Team Section -->
   <section class="section-padding" style="background-color: white;">
     <div class="container text-center">
-      <h2 class="team-section-title gradient-text">Core Team 2026-27</h2>
 
-      <!-- Core Team Grid -->
-      <div class="team-grid animate-slide-up" style="margin-top: 2rem;">
+      <!-- ENCHANTÉ Custom Animated Theme Border Frame -->
+      <div class="enchante-theme-frame">
 
-        <!-- Line 1: 3 People -->
-        <!-- President -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <img class="team-avatar" src="images/shlok-sharma.png" alt="Rtr. Shlok Sharma">
+        <!-- Frame Corner Metallic Accents -->
+        <div class="frame-corner-accent frame-corner-tl"></div>
+        <div class="frame-corner-accent frame-corner-tr"></div>
+        <div class="frame-corner-accent frame-corner-bl"></div>
+        <div class="frame-corner-accent frame-corner-br"></div>
+
+        <h2 class="team-section-title gradient-text">Core Team 2026-27</h2>
+
+        <!-- Core Team Grid -->
+        <div class="team-grid animate-slide-up" style="margin-top: 2rem;">
+
+          <!-- Line 1: 3 People -->
+          <!-- President -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <img class="team-avatar" src="images/shlok-sharma.png" alt="Rtr. Shlok Sharma">
+            </div>
+            <h3>Rtr. Shlok Sharma</h3>
+            <div class="team-role">President</div>
           </div>
-          <h3>Rtr. Shlok Sharma</h3>
-          <div class="team-role">President</div>
-        </div>
 
-        <!-- Secretary -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">SK</div>
+          <!-- Secretary -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">SK</div>
+            </div>
+            <h3>Rtr. Shruti K</h3>
+            <div class="team-role">Secretary</div>
           </div>
-          <h3>Rtr. Shruti K</h3>
-          <div class="team-role">Secretary</div>
-        </div>
 
-        <!-- Jt. Secretary -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">AK</div>
+          <!-- Jt. Secretary -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">AK</div>
+            </div>
+            <h3>Rtr. Aayesha Kaliwala</h3>
+            <div class="team-role">Jt. Secretary</div>
           </div>
-          <h3>Rtr. Aayesha Kaliwala</h3>
-          <div class="team-role">Jt. Secretary</div>
-        </div>
 
-        <!-- Line 2: 3 People -->
-        <!-- Treasurer -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">DK</div>
+          <!-- Line 2: 3 People -->
+          <!-- Treasurer -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">DK</div>
+            </div>
+            <h3>Rtr. Dhruv Krishnan</h3>
+            <div class="team-role">Treasurer</div>
           </div>
-          <h3>Rtr. Dhruv Krishnan</h3>
-          <div class="team-role">Treasurer</div>
-        </div>
 
-        <!-- Jt. Treasurer -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">AS</div>
+          <!-- Jt. Treasurer -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">AS</div>
+            </div>
+            <h3>Rtr. Aryaveer Singh</h3>
+            <div class="team-role">Jt. Treasurer</div>
           </div>
-          <h3>Rtr. Aryaveer Singh</h3>
-          <div class="team-role">Jt. Treasurer</div>
-        </div>
 
-        <!-- Vice President 1 -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">HS</div>
+          <!-- Vice President 1 -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">HS</div>
+            </div>
+            <h3>Rtr. Hardik Sawant</h3>
+            <div class="team-role">Vice President</div>
           </div>
-          <h3>Rtr. Hardik Sawant</h3>
-          <div class="team-role">Vice President</div>
-        </div>
 
-        <!-- Line 3: 3 People -->
-        <!-- Vice President 2 -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <img class="team-avatar"
-              src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/screenshot-20250802-131525-gallery_orig.jpg"
-              alt="Rtr. Zara Bukhari">
+          <!-- Line 3: 3 People -->
+          <!-- Vice President 2 -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <img class="team-avatar"
+                src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/screenshot-20250802-131525-gallery_orig.jpg"
+                alt="Rtr. Zara Bukhari">
+            </div>
+            <h3>Rtr. Zara Bukhari</h3>
+            <div class="team-role">Vice President</div>
           </div>
-          <h3>Rtr. Zara Bukhari</h3>
-          <div class="team-role">Vice President</div>
-        </div>
 
-        <!-- Vice President 3 -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">HD</div>
+          <!-- Vice President 3 -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">HD</div>
+            </div>
+            <h3>Rtr. Harsh Deshmukh</h3>
+            <div class="team-role">Vice President</div>
           </div>
-          <h3>Rtr. Harsh Deshmukh</h3>
-          <div class="team-role">Vice President</div>
-        </div>
 
-        <!-- Sergeant At Arms -->
-        <div class="team-card team-card-span-4">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">RP</div>
+          <!-- Sergeant At Arms -->
+          <div class="team-card team-card-span-4">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">RP</div>
+            </div>
+            <h3>Rtr. Riya Patil</h3>
+            <div class="team-role">Sergeant At Arms</div>
           </div>
-          <h3>Rtr. Riya Patil</h3>
-          <div class="team-role">Sergeant At Arms</div>
-        </div>
 
-        <!-- Line 4: 4 People -->
-        <!-- TRS Chair -->
-        <div class="team-card team-card-span-3">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">PB</div>
+          <!-- Line 4: 4 People -->
+          <!-- TRS Chair -->
+          <div class="team-card team-card-span-3">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">PB</div>
+            </div>
+            <h3>Rtr. Priti Bhatia</h3>
+            <div class="team-role">TRS Chair</div>
           </div>
-          <h3>Rtr. Priti Bhatia</h3>
-          <div class="team-role">TRS Chair</div>
-        </div>
 
-        <!-- Digital Communications Chair -->
-        <div class="team-card team-card-span-3">
-          <div class="team-avatar-wrapper">
-            <img class="team-avatar" src="images/sunayna-anand.png" alt="Rtr. Sunayna Anand">
+          <!-- Digital Communications Chair -->
+          <div class="team-card team-card-span-3">
+            <div class="team-avatar-wrapper">
+              <img class="team-avatar" src="images/sunayna-anand.png" alt="Rtr. Sunayna Anand">
+            </div>
+            <h3>Rtr. Sunayna Anand</h3>
+            <div class="team-role">Digital Communications Chair</div>
           </div>
-          <h3>Rtr. Sunayna Anand</h3>
-          <div class="team-role">Digital Communications Chair</div>
-        </div>
 
-        <!-- Immediate Past President -->
-        <div class="team-card team-card-span-3">
-          <div class="team-avatar-wrapper">
-            <img class="team-avatar"
-              src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/published/img-20240902-wa0023.jpg"
-              alt="Rtr. Kshitij Raut">
+          <!-- Immediate Past President -->
+          <div class="team-card team-card-span-3">
+            <div class="team-avatar-wrapper">
+              <img class="team-avatar"
+                src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/published/img-20240902-wa0023.jpg"
+                alt="Rtr. Kshitij Raut">
+            </div>
+            <h3>Rtr. Kshitij Raut</h3>
+            <div class="team-role">IPP</div>
           </div>
-          <h3>Rtr. Kshitij Raut</h3>
-          <div class="team-role">IPP</div>
-        </div>
 
-        <!-- Club Mentor -->
-        <div class="team-card team-card-span-3">
-          <div class="team-avatar-wrapper">
-            <div class="avatar-placeholder">O</div>
+          <!-- Club Mentor -->
+          <div class="team-card team-card-span-3">
+            <div class="team-avatar-wrapper">
+              <div class="avatar-placeholder">O</div>
+            </div>
+            <h3>Rtr. Omkar</h3>
+            <div class="team-role">Club Mentor</div>
           </div>
-          <h3>Rtr. Omkar</h3>
-          <div class="team-role">Club Mentor</div>
-        </div>
 
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Board of Directors Section -->
-  <section class="section-padding">
+  <section class="section-padding" style="background-color: var(--bg-main);">
     <div class="container text-center">
-      <h2 class="team-section-title gradient-text">Board of Directors 2025-26</h2>
 
-      <!-- BOD Grid -->
-      <div class="bod-grid animate-slide-up" style="margin-top: 2rem; text-align: left;">
+      <!-- ENCHANTÉ Custom Animated Theme Border Frame for BOD -->
+      <div class="enchante-theme-frame">
 
-        <!-- Community Service -->
-        <div class="bod-card">
-          <h3>Community Service</h3>
-          <div class="bod-member">Rtr. Maahira Shoree</div>
-          <div class="bod-member">Rtr. Rutika Choughale</div>
+        <!-- Frame Corner Metallic Accents -->
+        <div class="frame-corner-accent frame-corner-tl"></div>
+        <div class="frame-corner-accent frame-corner-tr"></div>
+        <div class="frame-corner-accent frame-corner-bl"></div>
+        <div class="frame-corner-accent frame-corner-br"></div>
+
+        <h2 class="team-section-title gradient-text">Board of Directors 2025-26</h2>
+
+        <!-- Interactive Avenue Filter Tabs -->
+        <div class="bod-filter-container">
+          <button class="bod-filter-btn active" data-filter="all">All Avenues</button>
+          <button class="bod-filter-btn" data-filter="service">Community & Club</button>
+          <button class="bod-filter-btn" data-filter="global">Career & Global</button>
+          <button class="bod-filter-btn" data-filter="media">Media & PR</button>
+          <button class="bod-filter-btn" data-filter="special">Sports & Special</button>
         </div>
 
-        <!-- Club Service -->
-        <div class="bod-card">
-          <h3>Club Service</h3>
-          <div class="bod-member">Rtr. Maahira Shoree</div>
-          <div class="bod-member">Rtr. Parashar Sawant</div>
-        </div>
+        <!-- BOD Grid -->
+        <div class="bod-grid animate-slide-up" style="margin-top: 1.5rem; text-align: left;">
 
-        <!-- Career Development -->
-        <div class="bod-card">
-          <h3>Career Development</h3>
-          <div class="bod-member">Rtr. Reva Luman</div>
-          <div class="bod-member">Rtr. Janhavi Mulay</div>
-        </div>
+          <!-- Community Service -->
+          <div class="bod-card" data-category="service">
+            <h3>Community Service</h3>
+            <div class="bod-member">Rtr. Maahira Shoree</div>
+            <div class="bod-member">Rtr. Rutika Choughale</div>
+          </div>
 
-        <!-- International Service -->
-        <div class="bod-card">
-          <h3>International Service</h3>
-          <div class="bod-member">Rtr. Jishnu Saha</div>
-          <div class="bod-member">Rtr. Saloni Sawant</div>
-        </div>
+          <!-- Club Service -->
+          <div class="bod-card" data-category="service">
+            <h3>Club Service</h3>
+            <div class="bod-member">Rtr. Maahira Shoree</div>
+            <div class="bod-member">Rtr. Parashar Sawant</div>
+          </div>
 
-        <!-- Sports -->
-        <div class="bod-card">
-          <h3>Sports</h3>
-          <div class="bod-member">Rtr. Anurag Rayudu</div>
-          <div class="bod-member">Rtr. Aditya Rathi</div>
-          <div class="bod-member">Rtr. Saish Padher</div>
-        </div>
+          <!-- Career Development -->
+          <div class="bod-card" data-category="global">
+            <h3>Career Development</h3>
+            <div class="bod-member">Rtr. Reva Luman</div>
+            <div class="bod-member">Rtr. Janhavi Mulay</div>
+          </div>
 
-        <!-- Digital Communications -->
-        <div class="bod-card">
-          <h3>Digital Communications</h3>
-          <div class="bod-member">Rtr. Raj Panchal</div>
-          <div class="bod-member">Rtr. Lavaakshi Keote</div>
-        </div>
+          <!-- International Service -->
+          <div class="bod-card" data-category="global">
+            <h3>International Service</h3>
+            <div class="bod-member">Rtr. Jishnu Saha</div>
+            <div class="bod-member">Rtr. Saloni Sawant</div>
+          </div>
 
-        <!-- Social Media Creations -->
-        <div class="bod-card">
-          <h3>Social Media Creations</h3>
-          <div class="bod-member">Rtr. Pranjal Shah</div>
-        </div>
+          <!-- Sports -->
+          <div class="bod-card" data-category="special">
+            <h3>Sports</h3>
+            <div class="bod-member">Rtr. Anurag Rayudu</div>
+            <div class="bod-member">Rtr. Aditya Rathi</div>
+            <div class="bod-member">Rtr. Saish Padher</div>
+          </div>
 
-        <!-- Editorial -->
-        <div class="bod-card">
-          <h3>Editorial</h3>
-          <div class="bod-member">Rtr. Shaurya Sharma</div>
-          <div class="bod-member">Rtr. Rohan Vaswani</div>
-        </div>
+          <!-- Digital Communications -->
+          <div class="bod-card" data-category="media">
+            <h3>Digital Communications</h3>
+            <div class="bod-member">Rtr. Raj Panchal</div>
+            <div class="bod-member">Rtr. Lavaakshi Keote</div>
+          </div>
 
-        <!-- PR & Marketing -->
-        <div class="bod-card">
-          <h3>PR & Marketing</h3>
-          <div class="bod-member">Rtr. Yash Khillari</div>
-          <div class="bod-member">Rtr. Janhavi Das</div>
-        </div>
+          <!-- Social Media Creations -->
+          <div class="bod-card" data-category="media">
+            <h3>Social Media Creations</h3>
+            <div class="bod-member">Rtr. Pranjal Shah</div>
+          </div>
 
-        <!-- Partners-In-Service -->
-        <div class="bod-card">
-          <h3>Partners In Service</h3>
-          <div class="bod-member">Rtr. Parth Vichare</div>
-          <div class="bod-member">Rtr. Harshvardhan Deshmukh</div>
-        </div>
+          <!-- Editorial -->
+          <div class="bod-card" data-category="media">
+            <h3>Editorial</h3>
+            <div class="bod-member">Rtr. Shaurya Sharma</div>
+            <div class="bod-member">Rtr. Rohan Vaswani</div>
+          </div>
 
-        <!-- TRS -->
-        <div class="bod-card">
-          <h3>TRS Team</h3>
-          <div class="bod-member">Rtr. Saniya Rathod</div>
-          <div class="bod-member">Rtr. Mansi Gavade</div>
-        </div>
+          <!-- PR & Marketing -->
+          <div class="bod-card" data-category="media">
+            <h3>PR & Marketing</h3>
+            <div class="bod-member">Rtr. Yash Khillari</div>
+            <div class="bod-member">Rtr. Janhavi Das</div>
+          </div>
 
+          <!-- Partners-In-Service -->
+          <div class="bod-card" data-category="service">
+            <h3>Partners In Service</h3>
+            <div class="bod-member">Rtr. Parth Vichare</div>
+            <div class="bod-member">Rtr. Harshvardhan Deshmukh</div>
+          </div>
+
+          <!-- TRS -->
+          <div class="bod-card" data-category="special">
+            <h3>TRS Team</h3>
+            <div class="bod-member">Rtr. Saniya Rathod</div>
+            <div class="bod-member">Rtr. Mansi Gavade</div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>

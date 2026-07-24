@@ -2279,3 +2279,463 @@ body.custom-cursor-active * {
   border-color: #ffffff;
 }
 
+/* 
+   =========================================
+   ENCHANTÉ DYNAMIC THEME & ANIMATED BORDERS
+   Inspired by the Rotaract ENCHANTÉ Emblem
+   =========================================
+*/
+
+:root {
+  --enchante-purple: #6b21a8;
+  --enchante-magenta: #be185d;
+  --enchante-orange: #ea580c;
+  --enchante-gold: #f59e0b;
+  --enchante-gradient: linear-gradient(135deg, #6b21a8 0%, #be185d 35%, #ea580c 70%, #f59e0b 100%);
+  --enchante-gradient-horizontal: linear-gradient(90deg, #6b21a8 0%, #be185d 30%, #ea580c 70%, #f59e0b 100%);
+}
+
+/* Background Particle Canvas */
+#enchante-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+/* Hero Badge & Theme Styling */
+.hero-enchante-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.35rem;
+  background: rgba(107, 33, 168, 0.06);
+  border: 1px solid rgba(107, 33, 168, 0.2);
+  border-radius: 50px;
+  font-family: var(--font-headings);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--enchante-purple);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 15px rgba(107, 33, 168, 0.08);
+}
+
+.hero-enchante-badge span.theme-name {
+  background: var(--enchante-gradient-horizontal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+
+/* Dynamic Stats Bar */
+.team-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 2rem auto 0 auto;
+}
+
+.team-stat-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(234, 88, 12, 0.15);
+  border-radius: 1.25rem;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(107, 33, 168, 0.05);
+  transition: var(--transition-normal);
+}
+
+.team-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--enchante-magenta);
+  box-shadow: 0 15px 35px rgba(107, 33, 168, 0.12);
+}
+
+.team-stat-number {
+  font-family: var(--font-headings);
+  font-size: 2.25rem;
+  font-weight: 800;
+  background: var(--enchante-gradient-horizontal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.1;
+}
+
+.team-stat-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.25rem;
+}
+
+/* Custom Animated Gradient Light Beam Frame Container */
+.enchante-theme-frame {
+  position: relative;
+  background: #ffffff;
+  border-radius: 2.25rem;
+  padding: 3.5rem 2.5rem 3.5rem 2.5rem;
+  margin: 3rem auto 2rem auto;
+  box-shadow: 0 20px 45px rgba(107, 33, 168, 0.07), 0 6px 20px rgba(234, 88, 12, 0.05);
+  /* Moving Animated Gradient Border */
+  border: 3px solid transparent;
+  background-image: linear-gradient(#ffffff, #ffffff), 
+                    linear-gradient(90deg, #6b21a8, #be185d, #ea580c, #f59e0b, #6b21a8);
+  background-size: 100% 100%, 300% 300%;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: borderBeam 8s linear infinite;
+  transition: var(--transition-normal);
+}
+
+@keyframes borderBeam {
+  0% { background-position: 0% 0%, 0% 50%; }
+  50% { background-position: 0% 0%, 100% 50%; }
+  100% { background-position: 0% 0%, 0% 50%; }
+}
+
+.enchante-theme-frame:hover {
+  box-shadow: 0 30px 60px rgba(107, 33, 168, 0.14), 0 12px 30px rgba(234, 88, 12, 0.12);
+}
+
+/* Inner Ornamental Dashed Ring */
+.enchante-theme-frame::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1.5px dashed rgba(234, 88, 12, 0.25);
+  border-radius: 1.75rem;
+  pointer-events: none;
+}
+
+/* Metallic Emblem Corner Accents */
+.frame-corner-accent {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  opacity: 0.75;
+  transition: transform 0.3s ease;
+}
+
+.enchante-theme-frame:hover .frame-corner-accent {
+  transform: scale(1.15);
+  opacity: 1;
+}
+
+.frame-corner-tl {
+  top: 16px;
+  left: 16px;
+  border-top: 3px solid var(--enchante-purple);
+  border-left: 3px solid var(--enchante-purple);
+  border-top-left-radius: 10px;
+}
+
+.frame-corner-tr {
+  top: 16px;
+  right: 16px;
+  border-top: 3px solid var(--enchante-magenta);
+  border-right: 3px solid var(--enchante-magenta);
+  border-top-right-radius: 10px;
+}
+
+.frame-corner-bl {
+  bottom: 16px;
+  left: 16px;
+  border-bottom: 3px solid var(--enchante-orange);
+  border-left: 3px solid var(--enchante-orange);
+  border-bottom-left-radius: 10px;
+}
+
+.frame-corner-br {
+  bottom: 16px;
+  right: 16px;
+  border-bottom: 3px solid var(--enchante-gold);
+  border-right: 3px solid var(--enchante-gold);
+  border-bottom-right-radius: 10px;
+}
+
+/* Team Card Dynamic 3D Sheen & Hover */
+.enchante-theme-frame .team-card {
+  border: 1px solid rgba(234, 88, 12, 0.15);
+  background: linear-gradient(180deg, #ffffff 0%, #fdfdfd 100%);
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.enchante-theme-frame .team-card:hover {
+  border-color: var(--enchante-orange);
+  box-shadow: 0 16px 35px rgba(234, 88, 12, 0.18), 0 6px 15px rgba(107, 33, 168, 0.1);
+}
+
+.enchante-theme-frame .team-avatar-wrapper {
+  border: 3.5px solid transparent;
+  background-image: linear-gradient(white, white), var(--enchante-gradient);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.enchante-theme-frame .team-card:hover .team-avatar-wrapper {
+  transform: scale(1.08) rotate(2deg);
+  box-shadow: 0 10px 25px rgba(107, 33, 168, 0.28);
+}
+
+.enchante-theme-frame .team-role {
+  color: var(--enchante-magenta);
+  font-weight: 700;
+}
+
+/* Avenue Filter Tabs for Board of Directors */
+.bod-filter-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0 2rem 0;
+  position: relative;
+  z-index: 5;
+}
+
+.bod-filter-btn {
+  background: #ffffff;
+  border: 1px solid rgba(107, 33, 168, 0.15);
+  color: var(--text-dark);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-family: var(--font-headings);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.bod-filter-btn:hover {
+  border-color: var(--enchante-magenta);
+  color: var(--enchante-purple);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(107, 33, 168, 0.12);
+}
+
+.bod-filter-btn.active {
+  background: var(--enchante-gradient-horizontal);
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 6px 18px rgba(107, 33, 168, 0.25);
+}
+
+/* BOD Cards Filter Transition */
+.enchante-theme-frame .bod-card {
+  border: 1px solid rgba(107, 33, 168, 0.15);
+  background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.enchante-theme-frame .bod-card.filtered-out {
+  display: none !important;
+}
+
+.enchante-theme-frame .bod-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--enchante-purple);
+  box-shadow: 0 15px 30px rgba(107, 33, 168, 0.15);
+}
+
+.enchante-theme-frame .bod-card h3 {
+  color: var(--enchante-purple);
+  border-bottom: 2px solid;
+  border-image: var(--enchante-gradient-horizontal) 1;
+}
+
+/* Responsive Theme Adjustments */
+@media (max-width: 768px) {
+  .enchante-theme-frame {
+    padding: 2.25rem 1.25rem 2.25rem 1.25rem;
+    margin: 2rem auto 1.5rem auto;
+    border-radius: 1.75rem;
+  }
+  .team-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* 
+   =========================================
+   PHOENIX ENTRANCE ANIMATION & HERO EMBLEM
+   =========================================
+*/
+
+/* Intro Overlay Container */
+.phoenix-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at center, #1e1035 0%, #0f172a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+}
+
+.phoenix-intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.phoenix-intro-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.phoenix-emblem-wrapper {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.phoenix-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
+  animation: phoenixRise 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, phoenixPulse 3s ease-in-out infinite 1.4s;
+}
+
+.phoenix-ring-glow {
+  position: absolute;
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  border-radius: 50%;
+  border: 2px dashed rgba(245, 158, 11, 0.6);
+  animation: ringRotate 12s linear infinite;
+  pointer-events: none;
+}
+
+.phoenix-intro-title {
+  font-family: var(--font-headings);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  background: var(--enchante-gradient-horizontal);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: slideUp 0.8s ease forwards 0.3s;
+  opacity: 0;
+}
+
+.phoenix-intro-subtitle {
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: slideUp 0.8s ease forwards 0.5s;
+  opacity: 0;
+}
+
+/* Keyframes for Phoenix Animation */
+@keyframes phoenixRise {
+  0% {
+    opacity: 0;
+    transform: scale(0.4) rotate(-15deg);
+    filter: blur(10px);
+  }
+  70% {
+    opacity: 1;
+    transform: scale(1.1) rotate(3deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes phoenixPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 70px rgba(234, 88, 12, 0.8), 0 0 120px rgba(190, 24, 93, 0.7);
+  }
+}
+
+@keyframes ringRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Hero Phoenix Emblem Badge */
+.hero-phoenix-emblem {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.5rem auto;
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hero-phoenix-emblem:hover {
+  transform: scale(1.1) rotate(3deg);
+}
+
+.hero-phoenix-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.35), 0 4px 15px rgba(107, 33, 168, 0.25);
+  animation: phoenixPulse 4s ease-in-out infinite;
+}
+
+.hero-phoenix-emblem::after {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  border: 2px dashed rgba(234, 88, 12, 0.4);
+  animation: ringRotate 16s linear infinite;
+}
+
+
+
+
