@@ -470,11 +470,11 @@ function initNetflixMode() {
 
 // 8. Dynamic ENCHANTÉ Team Interactions (Avenue Filters, 3D Card Tilt & Particle Canvas)
 function initEnchanteTeamInteractions() {
-  // A. Board of Directors Avenue Filtering
+  // A. Board of Directors Avenue Group Filtering
   const filterBtns = document.querySelectorAll('.bod-filter-btn');
-  const bodCards = document.querySelectorAll('.bod-card');
+  const avenueGroups = document.querySelectorAll('.bod-avenue-group');
 
-  if (filterBtns.length > 0 && bodCards.length > 0) {
+  if (filterBtns.length > 0 && avenueGroups.length > 0) {
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         // Active class toggle
@@ -483,26 +483,26 @@ function initEnchanteTeamInteractions() {
 
         const filter = btn.getAttribute('data-filter');
 
-        bodCards.forEach(card => {
-          const category = card.getAttribute('data-category');
+        avenueGroups.forEach(group => {
+          const category = group.getAttribute('data-category');
           if (filter === 'all' || category === filter) {
-            card.classList.remove('filtered-out');
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(15px)';
+            group.classList.remove('filtered-out');
+            group.style.opacity = '0';
+            group.style.transform = 'translateY(15px)';
             setTimeout(() => {
-              card.style.opacity = '1';
-              card.style.transform = 'translateY(0)';
+              group.style.opacity = '1';
+              group.style.transform = 'translateY(0)';
             }, 50);
           } else {
-            card.classList.add('filtered-out');
+            group.classList.add('filtered-out');
           }
         });
       });
     });
   }
 
-  // B. Interactive 3D Card Tilt Sheen Effect
-  const teamCards = document.querySelectorAll('.enchante-theme-frame .team-card');
+  // B. Interactive 3D Card Tilt Sheen Effect for all Team Cards
+  const teamCards = document.querySelectorAll('.team-card');
   teamCards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();

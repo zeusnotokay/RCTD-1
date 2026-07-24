@@ -2756,6 +2756,40 @@ body.custom-cursor-active * {
   animation: ringRotate 16s linear infinite;
 }
 
+/* Board of Directors Avenue Grouping */
+.bod-avenue-group {
+  margin-bottom: 3rem;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.bod-avenue-group.filtered-out {
+  display: none !important;
+}
+
+.bod-avenue-title {
+  font-family: var(--font-headings);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--enchante-purple);
+  margin-bottom: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.bod-avenue-title::before,
+.bod-avenue-title::after {
+  content: '';
+  flex: 1;
+  max-width: 140px;
+  height: 2px;
+  background: var(--enchante-gradient-horizontal);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+
 
 
 
