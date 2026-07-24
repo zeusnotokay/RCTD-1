@@ -2789,6 +2789,21 @@ body.custom-cursor-active * {
   opacity: 0.6;
 }
 
+/* Centering BOD Team Cards when 1, 2, or 3 directors exist */
+.bod-avenue-group .team-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bod-avenue-group .team-card-span-4 {
+  flex: 0 1 calc(33.333% - 1.35rem);
+  min-width: 260px;
+  max-width: 360px;
+}
+
+
 
 
 
