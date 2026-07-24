@@ -2616,15 +2616,17 @@ body.custom-cursor-active * {
 
 .phoenix-emblem-wrapper {
   position: relative;
-  width: 220px;
-  height: 220px;
+  width: 320px;
+  height: 320px;
+  max-width: 80vw;
+  max-height: 80vw;
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
   border-radius: 50%;
-  padding: 8px;
-  box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
+  padding: 12px;
+  box-shadow: 0 0 60px rgba(234, 88, 12, 0.65), 0 0 110px rgba(107, 33, 168, 0.55);
   animation: phoenixRise 1.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, phoenixPulse 3s ease-in-out infinite 1.4s;
 }
 
@@ -2637,21 +2639,21 @@ body.custom-cursor-active * {
 
 .phoenix-ring-glow {
   position: absolute;
-  top: -12px;
-  left: -12px;
-  right: -12px;
-  bottom: -12px;
+  top: -14px;
+  left: -14px;
+  right: -14px;
+  bottom: -14px;
   border-radius: 50%;
-  border: 2.5px dashed rgba(245, 158, 11, 0.7);
+  border: 3px dashed rgba(245, 158, 11, 0.75);
   animation: ringRotate 14s linear infinite;
   pointer-events: none;
 }
 
 .phoenix-intro-title {
   font-family: var(--font-headings);
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 4px;
   text-transform: uppercase;
   background: var(--enchante-gradient-horizontal);
   -webkit-background-clip: text;
@@ -2662,7 +2664,7 @@ body.custom-cursor-active * {
 
 .phoenix-intro-subtitle {
   color: #e2e8f0;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 1px;
   animation: slideUp 0.8s ease forwards 0.5s;
@@ -2691,11 +2693,11 @@ body.custom-cursor-active * {
 @keyframes phoenixPulse {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 50px rgba(234, 88, 12, 0.6), 0 0 90px rgba(107, 33, 168, 0.5);
+    box-shadow: 0 0 60px rgba(234, 88, 12, 0.65), 0 0 110px rgba(107, 33, 168, 0.55);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 75px rgba(234, 88, 12, 0.85), 0 0 120px rgba(190, 24, 93, 0.75);
+    box-shadow: 0 0 85px rgba(234, 88, 12, 0.88), 0 0 140px rgba(190, 24, 93, 0.8);
   }
 }
 
@@ -2707,14 +2709,16 @@ body.custom-cursor-active * {
 /* Hero Phoenix Emblem Badge */
 .hero-phoenix-emblem {
   position: relative;
-  width: 170px;
-  height: 170px;
+  width: 230px;
+  height: 230px;
+  max-width: 75vw;
+  max-height: 75vw;
   margin: 0 auto 1.5rem auto;
   cursor: pointer;
   background: white;
   border-radius: 50%;
-  padding: 6px;
-  box-shadow: 0 12px 35px rgba(234, 88, 12, 0.35), 0 4px 15px rgba(107, 33, 168, 0.25);
+  padding: 8px;
+  box-shadow: 0 16px 45px rgba(234, 88, 12, 0.38), 0 6px 20px rgba(107, 33, 168, 0.28);
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: phoenixPulse 4s ease-in-out infinite;
 }
