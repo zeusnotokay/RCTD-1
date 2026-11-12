@@ -1,85 +1,15 @@
 /* 
-   Rotaract Club of Thane Downtown - Shared Header & Footer Injection
-   Maintains standard layouts and handles mobile nav drawers across pages.
+   Rotaract Club of Thane Downtown - Shared Footer & Custom Cursor Injection
+   Maintains standard layouts across pages.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Inject Header Nav
-  injectHeader();
-  
-  // 2. Inject Footer
+  // 1. Inject Footer
   injectFooter();
-  
-  // 3. Setup Scroll Event for Sticky Header
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header-nav');
-    if (header) {
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    }
-  });
-  
-  // 4. Setup Mobile Nav Toggle
-  setupMobileNav();
-  
-  // 5. Set Active Page
-  setActivePage();
 
-  // 6. Initialize Custom Cursor Follower
+  // 2. Initialize Custom Cursor Follower
   initCustomCursor();
 });
-
-function injectHeader() {
-  const headerHtml = `
-    <nav class="header-nav">
-      <div class="container nav-container">
-        <div class="logo">
-          <a href="index.html">
-            <img src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/published/rctd-cranberry.png" alt="RC THANE DOWNTOWN Logo">
-          </a>
-        </div>
-        <ul class="nav-menu">
-          <li class="nav-item" data-page="index"><a href="index.html">Home</a></li>
-          <li class="nav-item" data-page="about-us"><a href="about-us.html">About Us</a></li>
-          <li class="nav-item" data-page="projects"><a href="projects.html">Projects</a></li>
-          <li class="nav-item" data-page="our-team"><a href="our-team.html">Our Team</a></li>
-          <li class="nav-item" data-page="our-calender"><a href="our-calender.html">Calendar</a></li>
-          <li class="nav-item" data-page="contact-us"><a href="contact-us.html">Contact Us</a></li>
-          <li class="nav-item" data-page="more-about-us"><a href="more-about-us.html">More About Us</a></li>
-        </ul>
-        <button class="hamburger" aria-label="Toggle Navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </nav>
-    
-    <!-- Mobile Nav Drawer -->
-    <div class="drawer-overlay"></div>
-    <div class="mobile-drawer">
-      <button class="drawer-close" aria-label="Close Navigation">&times;</button>
-      <div class="logo">
-        <img src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/published/rctd-cranberry.png" alt="RC THANE DOWNTOWN Logo" style="height: 50px;">
-      </div>
-      <ul class="mobile-nav-menu">
-        <li class="mobile-nav-item" data-page="index"><a href="index.html">Home</a></li>
-        <li class="mobile-nav-item" data-page="about-us"><a href="about-us.html">About Us</a></li>
-        <li class="mobile-nav-item" data-page="projects"><a href="projects.html">Projects</a></li>
-        <li class="mobile-nav-item" data-page="our-team"><a href="our-team.html">Our Team</a></li>
-        <li class="mobile-nav-item" data-page="our-calender"><a href="our-calender.html">Calendar</a></li>
-        <li class="mobile-nav-item" data-page="contact-us"><a href="contact-us.html">Contact Us</a></li>
-        <li class="mobile-nav-item" data-page="more-about-us"><a href="more-about-us.html">More About Us</a></li>
-      </ul>
-    </div>
-  `;
-  
-  // Insert at the top of the body
-  document.body.insertAdjacentHTML('afterbegin', headerHtml);
-}
 
 function injectFooter() {
   const footerHtml = `
@@ -130,61 +60,6 @@ function injectFooter() {
   
   // Insert at the bottom of the body
   document.body.insertAdjacentHTML('beforeend', footerHtml);
-}
-
-function setupMobileNav() {
-  const hamburger = document.querySelector('.hamburger');
-  const closeBtn = document.querySelector('.drawer-close');
-  const drawer = document.querySelector('.mobile-drawer');
-  const overlay = document.querySelector('.drawer-overlay');
-  
-  if (!hamburger || !closeBtn || !drawer || !overlay) return;
-  
-  const openMenu = () => {
-    drawer.classList.add('open');
-    overlay.classList.add('visible');
-    document.body.style.overflow = 'hidden'; // Disable background scrolling
-  };
-  
-  const closeMenu = () => {
-    drawer.classList.remove('open');
-    overlay.classList.remove('visible');
-    document.body.style.overflow = ''; // Enable background scrolling
-  };
-  
-  hamburger.addEventListener('click', openMenu);
-  closeBtn.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
-}
-
-function setActivePage() {
-  // Get current page from URL
-  let path = window.location.pathname;
-  let page = path.split('/').pop().replace('.html', '');
-  
-  if (page === '' || page === 'index') {
-    page = 'index';
-  }
-  
-  // Mark active items in desktop header
-  const desktopItems = document.querySelectorAll('.nav-item');
-  desktopItems.forEach(item => {
-    if (item.getAttribute('data-page') === page) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
-  
-  // Mark active items in mobile drawer
-  const mobileItems = document.querySelectorAll('.mobile-nav-item');
-  mobileItems.forEach(item => {
-    if (item.getAttribute('data-page') === page) {
-      item.classList.add('active');
-    } else {
-      item.classList.remove('active');
-    }
-  });
 }
 
 function initCustomCursor() {

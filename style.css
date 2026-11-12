@@ -135,7 +135,14 @@ ul {
   -webkit-text-fill-color: transparent;
 }
 
-/* Shared Header Layout */
+/* Shared Header Layout - Hidden for external linking */
+.header-nav,
+.mobile-drawer,
+.drawer-overlay,
+.netflix-header-nav {
+  display: none !important;
+}
+
 .header-nav {
   position: fixed;
   top: 0;
@@ -293,7 +300,7 @@ ul {
 
 /* Premium Hero Slideshow on Home */
 .hero-slider-container {
-  margin-top: 80px;
+  margin-top: 0;
   position: relative;
   height: 70vh;
   min-height: 500px;
@@ -421,7 +428,7 @@ ul {
 
 /* Premium Page Header Hero */
 .page-hero {
-  margin-top: 80px;
+  margin-top: 0;
   background: linear-gradient(135deg, rgba(157, 23, 77, 0.05), rgba(30, 58, 170, 0.05));
   padding: 6rem 0;
   text-align: center;
