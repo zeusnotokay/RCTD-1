@@ -1,15 +1,33 @@
 /* 
-   Rotaract Club of Thane Downtown - Shared Footer & Custom Cursor Injection
+   Rotaract Club of Thane Downtown - Shared Header & Footer Injection
    Maintains standard layouts across pages.
 */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Inject Footer
+  // 1. Inject Top Logo Header
+  injectTopLogo();
+
+  // 2. Inject Footer
   injectFooter();
 
-  // 2. Initialize Custom Cursor Follower
+  // 3. Initialize Custom Cursor Follower
   initCustomCursor();
 });
+
+function injectTopLogo() {
+  if (document.querySelector('.top-logo-header')) return;
+
+  const logoHtml = `
+    <header class="top-logo-header">
+      <div class="container text-center">
+        <a href="index.html" class="brand-logo-link" aria-label="Rotaract Club of Thane Downtown Home">
+          <img src="https://rc-thanedowntown.weebly.com/uploads/1/1/4/1/114181425/published/rctd-cranberry.png" alt="Rotaract Club of Thane Downtown Logo" class="brand-top-logo">
+        </a>
+      </div>
+    </header>
+  `;
+  document.body.insertAdjacentHTML('afterbegin', logoHtml);
+}
 
 function injectFooter() {
   const footerHtml = `
