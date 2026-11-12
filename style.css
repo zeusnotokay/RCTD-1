@@ -186,22 +186,30 @@ ul {
   }
 }
 
-/* Dark mode cinema page adaptation */
+/* Dark mode cinema page adaptation - Seamlessly blend with background */
 .netflix-body .top-logo-header {
-  background: rgba(8, 12, 22, 0.9);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 1.25rem 1.5rem 0.5rem 1.5rem;
 }
 
 .netflix-body .top-logo-header .brand-logo-link {
-  background: rgba(255, 255, 255, 0.96);
-  padding: 0.35rem 1.4rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 15px rgba(157, 23, 77, 0.35);
+  background: transparent !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .netflix-body .brand-top-logo {
-  height: 40px;
+  height: 48px;
+  filter: drop-shadow(0 4px 15px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 20px rgba(244, 63, 94, 0.45));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.netflix-body .brand-logo-link:hover .brand-top-logo {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 25px rgba(244, 63, 94, 0.7));
 }
 
 .header-nav {
@@ -2977,39 +2985,28 @@ body.custom-cursor-active * {
 }
 
 .cinema-logo-badge {
-  background: rgba(255, 255, 255, 0.96);
-  padding: 1.25rem 2.6rem;
-  border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 
-              0 0 55px rgba(157, 23, 77, 0.55),
-              0 0 95px rgba(30, 58, 170, 0.35);
+  background: transparent;
+  padding: 0.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: none;
+  box-shadow: none;
 }
 
 /* Light sweep shimmer across the logo */
 .cinema-logo-badge::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -150%;
-  width: 80%;
-  height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-  transform: rotate(25deg);
-  animation: cinemaShimmer 2.2s infinite ease-in-out 0.8s;
+  display: none;
 }
 
 .cinema-logo-img {
-  height: 70px;
+  height: 75px;
   max-width: 85vw;
   width: auto;
   object-fit: contain;
   display: block;
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 35px rgba(244, 63, 94, 0.65));
 }
 
 .cinema-halo-ring {
