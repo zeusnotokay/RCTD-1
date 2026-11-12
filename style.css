@@ -1316,24 +1316,38 @@ footer {
 
 /* 
    =========================================
-   NETFLIX MOVIE MODE STYLING 
+   RCTD CINEMA (MOVIE MODE) STYLING 
    =========================================
 */
 
-/* Custom variables for Netflix theme */
+/* Variables aligned with RCTD Brand Page Theme */
 :root {
-  --netflix-red: #e50914;
-  --netflix-black: #141414;
-  --netflix-grey: #181818;
-  --netflix-text: #e5e5e5;
+  --cinema-primary: #9d174d;          /* Cranberry */
+  --cinema-primary-bright: #be123c;   /* Vibrant Cranberry */
+  --cinema-primary-glow: rgba(157, 23, 77, 0.55);
+  --cinema-secondary: #1e3a8a;        /* Midnight Blue */
+  --cinema-accent: #2563eb;           /* Royal Blue */
+  --cinema-gold: #f59e0b;             /* Warm Gold */
+  --cinema-black: #080c16;            /* Deep Midnight Charcoal */
+  --cinema-card: #0f172a;             /* Slate 900 */
+  --cinema-card-hover: #1e293b;       /* Slate 800 */
+  --cinema-text: #e2e8f0;             /* Slate 200 */
+  --cinema-white: #ffffff;
+
+  /* Backward compatibility for Netflix classes */
+  --netflix-red: #be123c;
+  --netflix-black: #080c16;
+  --netflix-grey: #0f172a;
+  --netflix-text: #e2e8f0;
   --netflix-white: #ffffff;
 }
 
-/* Netflix Page container */
+/* Cinema Page container */
 .netflix-body {
-  background-color: var(--netflix-black) !important;
-  color: var(--netflix-text) !important;
-  font-family: 'Montserrat', sans-serif;
+  background: radial-gradient(circle at 50% 0%, rgba(157, 23, 77, 0.16) 0%, rgba(30, 58, 170, 0.1) 40%, var(--cinema-black) 75%) !important;
+  background-color: var(--cinema-black) !important;
+  color: var(--cinema-text) !important;
+  font-family: var(--font-headings), 'Montserrat', sans-serif;
   overflow-x: hidden;
 }
 
@@ -1342,7 +1356,7 @@ footer {
 .netflix-body h2, 
 .netflix-body h3, 
 .netflix-body h4 {
-  color: var(--netflix-white) !important;
+  color: var(--cinema-white) !important;
 }
 
 /* Netflix Header Layout */
@@ -1448,8 +1462,8 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(77deg, rgba(0,0,0,0.8), transparent 85%), 
-              linear-gradient(to top, var(--netflix-black), transparent 25%);
+  background: linear-gradient(77deg, rgba(8, 12, 22, 0.95), rgba(8, 12, 22, 0.75) 45%, transparent 85%), 
+              linear-gradient(to top, var(--cinema-black), transparent 25%);
   z-index: 1;
 }
 
@@ -1467,8 +1481,8 @@ footer {
 .billboard-category {
   font-size: 0.95rem;
   font-weight: 700;
-  letter-spacing: 2px;
-  color: #aaa;
+  letter-spacing: 2.5px;
+  color: #fda4af;
   text-transform: uppercase;
 }
 
@@ -1476,7 +1490,7 @@ footer {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 15px rgba(0,0,0,0.9);
 }
 
 .billboard-desc {
@@ -1500,25 +1514,36 @@ footer {
   padding: 0.75rem 2rem;
   font-size: 1.1rem;
   font-weight: 700;
-  border-radius: 4px;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .netflix-btn:hover {
-  opacity: 0.85;
-  transform: scale(1.02);
+  opacity: 0.92;
+  transform: scale(1.03);
 }
 
 .netflix-btn-play {
-  background-color: var(--netflix-white);
-  color: var(--netflix-black);
+  background: linear-gradient(135deg, var(--cinema-primary-bright), var(--cinema-primary));
+  color: white;
+  box-shadow: 0 4px 18px rgba(190, 18, 60, 0.45);
+}
+
+.netflix-btn-play:hover {
+  box-shadow: 0 6px 25px rgba(190, 18, 60, 0.65);
 }
 
 .netflix-btn-info {
-  background-color: rgba(109, 109, 110, 0.7);
-  color: var(--netflix-white);
+  background-color: rgba(30, 58, 138, 0.45);
+  color: var(--cinema-white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+}
+
+.netflix-btn-info:hover {
+  background-color: rgba(30, 58, 138, 0.7);
 }
 
 /* Billboard Age Badge */
@@ -1527,11 +1552,12 @@ footer {
   right: 0;
   bottom: 25%;
   z-index: 2;
-  background-color: rgba(51, 51, 51, 0.6);
+  background-color: rgba(15, 23, 42, 0.85);
   padding: 0.5rem 2rem 0.5rem 1rem;
-  border-left: 3px solid #dcdcdc;
+  border-left: 3px solid var(--cinema-primary-bright);
   font-weight: 600;
   font-size: 1rem;
+  backdrop-filter: blur(8px);
 }
 
 /* Movie rows sliders */
@@ -1586,13 +1612,16 @@ footer {
   flex-shrink: 0;
   width: 260px;
   aspect-ratio: 16/9;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  background-color: var(--netflix-grey);
+  background-color: var(--cinema-card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow-sm);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
               z-index 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   z-index: 1;
 }
@@ -1610,7 +1639,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.95) 15%, transparent 60%);
+  background: linear-gradient(to top, rgba(8, 12, 22, 0.95) 15%, transparent 60%);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1626,7 +1655,7 @@ footer {
 
 .movie-card-meta {
   font-size: 0.75rem;
-  color: #46d369;
+  color: #38bdf8;
   font-weight: 700;
   margin-top: 0.15rem;
   display: flex;
@@ -1636,7 +1665,7 @@ footer {
 
 .movie-card-genres {
   font-size: 0.65rem;
-  color: #aaa;
+  color: #94a3b8;
   margin-top: 0.1rem;
   white-space: nowrap;
   overflow: hidden;
@@ -1645,13 +1674,14 @@ footer {
 
 /* Card Hover Zoom Effect */
 .movie-card:hover {
-  transform: scale(1.3) translateY(-10px);
+  transform: scale(1.22) translateY(-8px);
   z-index: 100;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 35px rgba(157, 23, 77, 0.4);
+  border-color: rgba(190, 18, 60, 0.65);
 }
 
 .movie-card:hover .movie-card-info-overlay {
-  background: rgba(24, 24, 24, 0.95);
+  background: rgba(15, 23, 42, 0.96);
 }
 
 /* Row Scroll Arrows */
@@ -1678,7 +1708,7 @@ footer {
 }
 
 .row-arrow:hover {
-  background-color: rgba(0,0,0,0.85);
+  background-color: rgba(157, 23, 77, 0.75);
   font-size: 2.2rem;
 }
 
@@ -1708,7 +1738,7 @@ footer {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 2rem;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .netflix-modal.open {
@@ -1717,12 +1747,13 @@ footer {
 }
 
 .netflix-modal-box {
-  background-color: var(--netflix-grey);
+  background-color: var(--cinema-card);
   width: 100%;
   max-width: 850px;
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.9), 0 0 50px rgba(157, 23, 77, 0.3);
+  border: 1px solid rgba(190, 18, 60, 0.35);
   position: relative;
   transform: scale(0.9);
   transition: transform 0.3s ease;
@@ -1739,20 +1770,22 @@ footer {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: #181818;
+  background-color: rgba(30, 41, 59, 0.9);
   color: white;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   font-size: 1.5rem;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(6px);
 }
 
 .netflix-modal-close:hover {
-  background-color: #333;
+  background-color: var(--cinema-primary-bright);
+  transform: rotate(90deg);
 }
 
 .netflix-modal-video {
@@ -1805,7 +1838,17 @@ footer {
 }
 
 .netflix-modal-match {
-  color: #46d369;
+  color: #38bdf8;
+}
+
+.netflix-modal-play-btn {
+  background: linear-gradient(135deg, var(--cinema-primary-bright), var(--cinema-primary)) !important;
+  color: white !important;
+  box-shadow: 0 4px 18px rgba(190, 18, 60, 0.45) !important;
+}
+
+.netflix-modal-play-btn:hover {
+  box-shadow: 0 6px 25px rgba(190, 18, 60, 0.7) !important;
 }
 
 .netflix-modal-year {
@@ -2808,6 +2851,215 @@ body.custom-cursor-active * {
   flex: 0 1 calc(33.333% - 1.35rem);
   min-width: 260px;
   max-width: 360px;
+}
+
+/* =========================================
+   RCTD CINEMA INTRO OVERLAY & LOGO ANIMATION
+   ========================================= */
+
+.cinema-intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at center, #1b0d26 0%, #0a0e1a 60%, #04060b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cinema-intro-overlay.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cinema-intro-backdrop-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 650px;
+  max-width: 90vw;
+  max-height: 90vw;
+  background: radial-gradient(circle, rgba(157, 23, 77, 0.45) 0%, rgba(30, 58, 170, 0.25) 45%, transparent 70%);
+  filter: blur(40px);
+  animation: cinemaBackdropPulse 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.cinema-intro-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.5rem;
+}
+
+.cinema-logo-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cinemaLogoZoom 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.cinema-logo-badge {
+  background: rgba(255, 255, 255, 0.96);
+  padding: 1.25rem 2.6rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 
+              0 0 55px rgba(157, 23, 77, 0.55),
+              0 0 95px rgba(30, 58, 170, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Light sweep shimmer across the logo */
+.cinema-logo-badge::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -150%;
+  width: 80%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+  transform: rotate(25deg);
+  animation: cinemaShimmer 2.2s infinite ease-in-out 0.8s;
+}
+
+.cinema-logo-img {
+  height: 70px;
+  max-width: 85vw;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.cinema-halo-ring {
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  right: -15px;
+  bottom: -15px;
+  border-radius: 28px;
+  border: 2px dashed rgba(244, 63, 94, 0.6);
+  animation: cinemaRingRotate 15s linear infinite;
+  pointer-events: none;
+}
+
+.cinema-intro-title {
+  font-family: var(--font-headings);
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #ffffff 0%, #fda4af 45%, #e11d48 70%, #60a5fa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(190, 18, 60, 0.5));
+  opacity: 0;
+  animation: cinemaTextReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.4s;
+  margin: 0;
+}
+
+.cinema-intro-subtitle {
+  color: #94a3b8;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.8s;
+  margin: 0;
+}
+
+@keyframes cinemaLogoZoom {
+  0% {
+    transform: scale(0.5) translateY(20px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes cinemaTextReveal {
+  0% {
+    opacity: 0;
+    letter-spacing: 12px;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 4px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cinemaShimmer {
+  0% {
+    left: -150%;
+  }
+  100% {
+    left: 200%;
+  }
+}
+
+@keyframes cinemaBackdropPulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.15);
+    opacity: 0.95;
+  }
+}
+
+@keyframes cinemaRingRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cinema-intro-title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+  .cinema-logo-img {
+    height: 50px;
+  }
+  .cinema-logo-badge {
+    padding: 0.9rem 1.8rem;
+  }
+  .cinema-intro-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
 }
 
 

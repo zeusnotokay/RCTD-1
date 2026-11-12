@@ -248,6 +248,24 @@ function initContactForm() {
 
 // 6. Netflix Movie Mode Actions
 function initNetflixMode() {
+  // Cinema Intro Overlay Auto-Dismissal
+  const cinemaIntro = document.getElementById('cinema-intro');
+  if (cinemaIntro) {
+    const dismissCinemaIntro = () => {
+      cinemaIntro.classList.add('fade-out');
+      setTimeout(() => {
+        if (cinemaIntro.parentNode) {
+          cinemaIntro.parentNode.removeChild(cinemaIntro);
+        }
+      }, 900);
+    };
+
+    // Auto fade-out after 2.4 seconds or immediately on click / keypress
+    setTimeout(dismissCinemaIntro, 2400);
+    cinemaIntro.addEventListener('click', dismissCinemaIntro);
+    window.addEventListener('keydown', dismissCinemaIntro, { once: true });
+  }
+
   const sliders = document.querySelectorAll('.movie-cards-container');
   const leftArrows = document.querySelectorAll('.row-arrow-left');
   const rightArrows = document.querySelectorAll('.row-arrow-right');
